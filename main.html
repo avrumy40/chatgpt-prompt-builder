@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prompt Builder</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+        body, input, button {
+            font-family: 'Montserrat', cursive;
+        }
+
+        .form-container {
+            background-color: #f7f9fc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #3f51b5;
+        }
+
+        #generatedPrompt {
+            background-color: #e3f2fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Prompt Builder</h1>
+        <p>This tool helps you to generate a prompt for a language model like GPT-3. Please fill out the form fields below and click "Submit" to generate a prompt.</p>
+        
+<div class="form-container mt-5 p-5">
+    <form id="promptBuilderForm">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="promptTopic">Basic Promot:</label>
+                    <input type="text" class="form-control" id="promptTopic" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Form Group 1 -->
+                <div class="form-group">
+            <label for="tone">Tone:</label>
+            <input type="text" class="form-control" id="tone" name="tone">
+        </div>
+        <div class="form-group">
+            <label for="format">Format:</label>
+            <input type="text" class="form-control" id="format" name="format">
+        </div>
+        <div class="form-group">
+            <label for="actAs">Act As:</label>
+            <input type="text" class="form-control" id="actAs" name="actAs">
+        </div>
+        <div class="form-group">
+            <label for="objective">Objective:</label>
+            <input type="text" class="form-control" id="objective" name="objective">
+        </div>
+        <div class="form-group">
+            <label for="context">Context:</label>
+            <input type="text" class="form-control" id="context" name="context">
+        </div>
+        <div class="form-group">
+            <label for="scope">Scope:</label>
+            <input type="text" class="form-control" id="scope" name="scope">
+        </div>
+           <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="statistics">
+            <label class="form-check-label" for="statistics">Add statistics?</label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="visualElements">
+            <label class="form-check-label" for="visualElements">Include visual elements?.</label>
+        </div>
+        
+                <!-- Rest of the form groups for the first column -->
+            </div>
+            <div class="col-md-6">
+                <!-- Form Group 2 -->
+                <div class="form-group">
+            <label for="limitations">Limitations:</label>
+            <input type="text" class="form-control" id="limitations">
+        </div>
+        <div class="form-group">
+            <label for="examples">Examples:</label>
+            <input type="text" class="form-control" id="examples">
+        </div>
+        <div class="form-group">
+            <label for="deadline">Deadline:</label>
+            <input type="date" class="form-control" id="deadline">
+        </div>
+        <div class="form-group">
+            <label for="quotes">Quotes:</label>
+            <input type="text" class="form-control" id="quotes">
+        </div>
+        
+        <div class="form-group">
+            <label for="callToAction">Call to Action:</label>
+            <input type="text" class="form-control" id="callToAction">
+        </div>
+        <div class="form-group">
+            <label for="keywords">Keywords:</label>
+            <input type="text" class="form-control" id="keywords" name="keywords">
+        </div>
+     
+
+                <!-- Rest of the form groups for the second column -->
+            </div>
+        </div>
+
+        
+        
+        <!-- include all other parameters -->
+        <!-- ... -->
+        <button type="submit" class="btn btn-primary">Generate Prompt</button>
+    </form>
+</div>
+
+
+        <h2 class="my-5">Generated Prompt:</h2>
+        <p id="generatedPrompt" class="p-3 mb-2 bg-light text-dark"></p>
+    </div>
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+    document.getElementById("promptBuilderForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const promptTopic = document.getElementById("promptTopic").value;
+    const tone = document.getElementById("tone").value;
+    const format = document.getElementById("format").value;
+    const actAs = document.getElementById("actAs").value;
+    const objective = document.getElementById("objective").value;
+    const context = document.getElementById("context").value;
+    const scope = document.getElementById("scope").value;
+    const keywords = document.getElementById("keywords").value;
+    const limitations = document.getElementById("limitations").value;
+    const examples = document.getElementById("examples").value;
+    const deadline = document.getElementById("deadline").value;
+    const quotes = document.getElementById("quotes").value;
+    const statistics = document.getElementById("statistics").checked;
+    const visualElements = document.getElementById("visualElements").checked;
+    const callToAction = document.getElementById("callToAction").value;
+    // Include all other parameters
+    // ...
+
+    let generatedPrompt = `"${promptTopic}".`;
+    if (tone) generatedPrompt += ` The tone should be "${tone}".`;
+    if (format) generatedPrompt += ` It should be formatted as "${format}".`;
+    if (actAs) generatedPrompt += ` Act as "${actAs}".`;
+    if (objective) generatedPrompt += ` The objective is to "${objective}".`;
+    if (context) generatedPrompt += ` The context is "${context}".`;
+    if (scope) generatedPrompt += ` The scope is "${scope}".`;
+    if (keywords) generatedPrompt += ` Include these keywords: "${keywords}".`;
+    if (limitations) generatedPrompt += ` Be mindful of these limitations: "${limitations}".`;
+    if (examples) generatedPrompt += ` Consider these examples: "${examples}".`;
+    if (deadline) generatedPrompt += ` The deadline is: "${deadline}".`;
+    if (quotes) generatedPrompt += ` Include these quotes: "${quotes}".`;
+    if (statistics) generatedPrompt += ` Include statistics.`;
+    if (visualElements) generatedPrompt += ` Include visual elements.`;
+    if (callToAction) generatedPrompt += ` Include this call to action: "${callToAction}".`;
+    // Include all other parameters in the generated prompt
+    // ...
+
+    document.getElementById("generatedPrompt").textContent = generatedPrompt;
+});
+
+      
+        // The generatedPrompt string can now be passed to the GPT API (on the server-side)
+   
+    </script>
+</body>
+</html>
