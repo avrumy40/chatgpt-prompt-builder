@@ -172,6 +172,18 @@
 
         <h2 class="my-5">Generated Prompt:</h2>
         <p id="generatedPrompt" class="p-3 mb-2 bg-light text-dark"></p>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <button class="btn btn-primary" id="copyPromptButton" onclick="copyPrompt()">Copy Prompt</button>
+                <button class="btn btn-primary" id="launchChatGPTButton" onclick="launchChatGPT()">Launch ChatGPT</button>
+        </div>
+        <div class="row mt-2">
+            <div class="col text-center">
+            &nbsp;
+    </div>
+</div>
+</div>
+
     </div>
     <!-- Include jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -223,5 +235,28 @@
         // The generatedPrompt string can now be passed to the GPT API (on the server-side)
    
     </script>
+ <script>
+    function copyPrompt() {
+        var promptElement = document.getElementById("generatedPrompt");
+        var promptText = promptElement.textContent;
+
+        var tempInput = document.createElement("textarea");
+        tempInput.value = promptText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        alert("Prompt copied to clipboard!");
+    }
+
+    function launchChatGPT() {
+        // Replace this with the URL or API endpoint to launch ChatGPT in a new chat
+        var chatGPTURL = "https://chat.openai.com/";
+
+        window.open(chatGPTURL, "_blank");
+    }
+</script>
+
 </body>
 </html>
