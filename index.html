@@ -37,10 +37,11 @@
     <form id="promptBuilderForm">
         <div class="row">
             <div class="col-12">
-                <div class="form-group">
-                    <label for="promptTopic">Basic Prompt:</label>
-                    <input type="text" class="form-control" id="promptTopic" required>
-                </div>
+               <div class="form-group">
+                <label for="promptTopic">Prompt Topic:</label>
+                <textarea class="form-control" id="promptTopic" rows="6"></textarea>
+            </div>
+
             </div>
         </div>
         <div class="row">
@@ -63,9 +64,26 @@
     </select>
 </div>
         <div class="form-group">
-            <label for="format">Format:</label>
-            <input type="text" class="form-control" id="format" name="format">
-        </div>
+    <label for="format">Format:</label>
+    <select class="form-control" id="format">
+        <option value="">Select a format</option>
+        <option value="essay">Essay</option>
+        <option value="bullet-points">Bullet Points</option>
+        <option value="outline">Outline</option>
+        <option value="dialogue">Dialogue</option>
+        <option value="case-study">Case Study</option>
+        <option value="presentation">Presentation</option>
+        <option value="report">Report</option>
+        <option value="interview">Interview</option>
+        <option value="storytelling">Storytelling</option>
+        <option value="newsletter">Newsletter</option>
+        <option value="infographic">Infographic</option>
+        <option value="proposal">Proposal</option>
+        <option value="script">Script</option>
+        <option value="research-paper">Research Paper</option>
+        <option value="guide">Guide</option>
+    </select>
+</div>
         <div class="form-group">
             <label for="actAs">Act As:</label>
             <input type="text" class="form-control" id="actAs" name="actAs">
@@ -114,9 +132,25 @@
         </div>
         
         <div class="form-group">
-            <label for="callToAction">Call to Action:</label>
-            <input type="text" class="form-control" id="callToAction">
-        </div>
+    <label for="callToAction">Call to Action:</label>
+    <select class="form-control" id="callToAction">
+        <option value="">Select a call to action</option>
+        <option value="Subscribe now">Subscribe now</option>
+        <option value="Get started today">Get started today</option>
+        <option value="Learn more">Learn more</option>
+        <option value="Sign up for free">Sign up for free</option>
+        <option value="Contact us">Contact us</option>
+        <option value="Shop now">Shop now</option>
+        <option value="Request a quote">Request a quote</option>
+        <option value="Join us">Join us</option>
+        <option value="Explore now">Explore now</option>
+        <option value="Take the quiz">Take the quiz</option>
+        <option value="Download now">Download now</option>
+        <option value="Get a demo">Get a demo</option>
+        <option value="Read more">Read more</option>
+        <option value="Donate now">Donate now</option>
+    </select>
+</div>
         <div class="form-group">
             <label for="keywords">Keywords:</label>
             <input type="text" class="form-control" id="keywords" name="keywords">
