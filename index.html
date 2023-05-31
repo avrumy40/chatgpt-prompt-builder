@@ -19,7 +19,7 @@
         <h1 class="text-center my-4">Prompt Builder</h1>
         <div class="row justify-content-center">
             <div class="col-10 col-md-8">
-                <p class="text-center my-4">This tool helps you to generate a prompt for a language model like ChatGPT.<br> Please fill out the form fields below and click "Submit" to generate a prompt.</p>
+                <p class="text-center my-4">This tool helps you to generate a prompt for a language model like ChatGPT. Please fill out the form fields below and click "Submit" to generate a prompt.</p>
             </div>
         </div>
 <div class="form-container mt-5 p-5">
@@ -247,6 +247,26 @@
         window.open(chatGPTURL, "_blank");
     }
 </script>
+
+<!-- Include these lines at the end of your HTML code -->
+<div class="container mt-5">
+    <h2 class="my-5">Best Practices for Prompting ChatGPT:</h2>
+    <ol class="list-group list-group-flush prompt-best-practices">
+        <li class="list-group-item">Specify Output Format: If you need the answer in a specific format, like an essay, bullet points, or a dialogue, mention this in the prompt. The format can be easily selected from the prompt builder tool.</li>
+        <li class="list-group-item">Specify Desired Tone: Your prompt should specify the tone you want the model to use. This is particularly important in business communications where the tone can significantly affect the message's reception. You can use the prompt builder tool to specify the tone.</li>
+        <li class="list-group-item">Give Clear Instructions: The clearer your instructions, the better GPT will understand what you want. If there's a specific format you want the text in, or if there are certain points you want to be covered, specify these in your prompt.</li>
+        <li class="list-group-item">Create a Context: If you're looking to have a continued conversation, you may want to build a conversational context that the model can follow.</li>
+        <li class="list-group-item">Consider Temperature and Max Tokens: These settings are worth noting because they can affect the output even if you can't adjust them. High temperature values produce more random outputs, while low values produce more deterministic outputs. Max tokens limits the length of the generated text.</li>
+        <li class="list-group-item">Rephrase When Necessary: If you don't get the desired response, try rephrasing the prompt or asking it in a different way.</li>
+        <li class="list-group-item">Ask for Elaboration: If the response is too vague, ask the model to elaborate or provide more detail.</li>
+        <li class="list-group-item">Prompt in Steps: For complex prompts, it can be helpful to break it down into simpler, smaller prompts.</li>
+        <li class="list-group-item">Experiment with Different Approaches: Feel free to experiment with different types of prompts to get a better feel for what results in the most satisfying outputs.</li>
+        <li class="list-group-item">Stay Patient: ChatGPT, like any AI model, may not always understand the prompt or give an accurate response. It can take a few attempts to get the desired response.</li>
+    </ol>
+</div>
+
+
+
 
 </body>
 </html>
