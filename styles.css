@@ -1,42 +1,193 @@
 body, input, button {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f7f9fc;
-    color: #333;
+    font-family: 'Montserrat', cursive;
+}
+
+body {
+    background: #f7f9fc;
 }
 
 .container {
     max-width: 960px;
-    margin: 0 auto;
-    padding: 0.5em 0.5em;
+    margin: auto;
+}
+
+.my-4 {
+    max-width: 750px;
+    margin: auto;
+    text-align: left
+}
+
+.form-container, .prompt-container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
 }
 
 h1, h2 {
     color: #3f51b5;
-}
-
-.form-container {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 2em;
-    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
-}
-
-.btn {
-    background-color: #3f51b5;
-    border-color: #3f51b5;
-}
-
-.btn:hover {
-    background-color: #283593;
-    border-color: #283593;
+    text-align: left;
 }
 
 #generatedPrompt {
     background-color: #e3f2fd;
-    border-radius: 10px;
-    padding: 1.5em;
-    margin: 0 0;
-    font-size: 1.2em;
-    line-height: 1.6em;
+    font-size: 1.2rem;
+    padding: 1rem;
 }
 
+/* Custom styles for accordion */
+.accordion-button {
+    background-color: #fff;
+    color: #212529;
+    font-size: 1rem;
+    text-align: left;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+}
+
+.accordion-button:hover {
+    background-color: #e9ecef;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #3f51b5;
+    background-color: #FAFCFB;
+}
+
+.accordion-body {
+    background-color: #FAFCFB;
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem;
+}
+    
+.popular-prompts {
+    margin-bottom: 100px;
+}
+
+.card-header {
+    background-color: #FAFCFB;
+}
+
+/* Your existing CSS here... */
+
+/* Emoji for Basic Prompt */
+label[for='promptTopic']::before {
+    content: "\1F4DD"; /* Notebook emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Tone */
+label[for='tone']::before {
+    content: "\1F3A7"; /* Headphone emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Format */
+label[for='format']::before {
+    content: "\1F4C4"; /* Page facing up emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Act As */
+label[for='actAs']::before {
+    content: "\1F464"; /* Bust in silhouette emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Objective */
+label[for='objective']::before {
+    content: "\1F3AF"; /* Direct hit emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Context */
+label[for='context']::before {
+    content: "\1F5BC"; /* Framed picture emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Scope */
+label[for='scope']::before {
+    content: "\1F30D"; /* Earth globe emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Statistics */
+label[for='statistics']::before {
+    content: "\1F4CA"; /* Bar chart emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Visual Elements */
+label[for='visualElements']::before {
+    content: "\1F4F7"; /* Camera emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Limitations */
+label[for='limitations']::before {
+    content: "\26A0"; /* Warning emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Examples */
+label[for='examples']::before {
+    content: "\1F4D6"; /* Open book emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Deadline */
+label[for='deadline']::before {
+    content: "\23F3"; /* Hourglass emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Quotes */
+label[for='quotes']::before {
+    content: "\1F4AC"; /* Speech balloon emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Call to Action */
+label[for='callToAction']::before {
+    content: "\1F449"; /* Pointing right emoji */
+    margin-right: 5px;
+}
+
+/* Emoji for Keywords */
+label[for='keywords']::before {
+    content: "\1F4A1"; /* Light bulb emoji */
+    margin-right: 5px;
+}
+/* Add to your CSS file */
+
+.prompt-best-practices {
+    border: 2px solid #007BFF;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    margin-bottom: 6rem;
+}
+
+.prompt-best-practices .list-group-item {
+    border: none;
+    background-color: #F8F9FA;
+    color: #343A40;
+    font-size: 16px;
+}
+
+.prompt-best-practices .list-group-item:nth-child(odd) {
+    background-color: #F1F3F5;
+}
+
+.prompt-best-practices .list-group-item:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.prompt-best-practices .list-group-item:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
